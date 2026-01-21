@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>Lezione Python – Classe 2A Robotica</title>
+
+<style>
+
+/* ============================
+   TEMA CHIARO (DEFAULT)
+============================ */
+:root {
+    --bg: #e8f0ff;
+    --bg2: #ffffff;
+    --text: #2a2a2a;
+    --accent: #4a6cf7;
+    --accent2: #6a8bff;
+    --code-bg: #f4f6ff;
+    --shadow: rgba(0,0,0,0.15);
+    --nav-bg1: #4a6cf7;
+    --nav-bg2: #6a8bff;
+}
+
+/* ============================
+   TEMA SCURO (ATTIVATO)
+============================ */
+#toggleTheme:checked ~ * {
+    --bg: #0f1117;
+    --bg2: #1a1d26;
+    --text: #e6e6e6;
+    --accent: #7aa2ff;
+    --accent2: #9bb8ff;
+    --code-bg: #1f2330;
+    --shadow: rgba(0,0,0,0.6);
+    --nav-bg1: #1f2330;
+    --nav-bg2: #2a3040;
+}
+
+/* Animazione cambio tema */
+body, section, header {
+    transition: background 0.4s ease, color 0.4s ease;
+}
+
+/* ============================
+   STILE GENERALE
+============================ */
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+}
+
+header {
+    background: linear-gradient(135deg, var(--accent), var(--accent2));
+    color: white;
+    padding: 35px;
+    text-align: center;
+    box-shadow: 0 4px 12px var(--shadow);
+}
+
+section {
+    background: var(--bg2);
+    margin: 25px auto;
+    padding: 30px;
+    width: 85%;
+    max-width: 900px;
+    border-radius: 18px;
+    box-shadow: 0 6px 18px var(--shadow);
+    transition: 0.3s;
+}
+
+h2 {
+    color: var(--accent);
+    border-left: 6px solid var(--accent);
+    padding-left: 12px;
+}
+
+h3 {
+    color: var(--accent2);
+}
+
+code {
+    background: var(--code-bg);
+    padding: 10px 14px;
+    border-radius: 10px;
+    display: block;
+    border-left: 5px solid var(--accent);
+    white-space: pre-wrap;
+    box-shadow: inset 0 0 8px var(--shadow);
+}
+
+/* ============================
+   NAV LATERALE
+============================ */
+#sideNav {
+    height: 100%;
+    width: 280px;
+    position: fixed;
+    top: 0;
+    right: -300px;
+    background: linear-gradient(180deg, var(--nav-bg1), var(--nav-bg2));
+    padding-top: 70px;
+    transition: 0.4s ease-in-out;
+    box-shadow: -5px 0 20px var(--shadow);
+    border-radius: 20px 0 0 20px;
+    z-index: 9999;
+}
+
+#toggleMenu:checked ~ #sideNav {
+    right: 0;
+}
+
+#sideNav a {
+    padding: 14px 25px;
+    text-decoration: none;
+    font-size: 19px;
+    color: white;
+    display: block;
+    font-weight: 600;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    transition: 0.2s;
+}
+
+#sideNav a:hover {
+    background: rgba(255,255,255,0.18);
+    padding-left: 35px;
+}
+
+/* ============================
+   PULSANTI GRAFICI
+============================ */
+#themeBtn, #menuBtn {
+    position: fixed;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    font-size: 22px;
+    color: white;
+    background: var(--accent);
+    box-shadow: 0 4px 12px var(--shadow);
+    transition: 0.3s;
+    z-index: 99999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#themeBtn:hover, #menuBtn:hover {
+    transform: scale(1.1);
+}
+
+#themeBtn {
+    bottom: 90px;
+}
+
+#menuBtn {
+    bottom: 20px;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- Checkbox nascosti -->
+<input type="checkbox" id="toggleMenu" hidden>
+<input type="checkbox" id="toggleTheme" hidden>
+
+<!-- Pulsanti grafici -->
+<label for="toggleTheme" id="themeBtn">🌗</label>
+<label for="toggleMenu" id="menuBtn">📘</label>
+
+<!-- NAV LATERALE -->
+<div id="sideNav">
+    <a href="#intro">Cos'è Python</a>
+    <a href="#scrivere">Come si scrive</a>
+    <a href="#variabili">Variabili</a>
+    <a href="#tipi">Tipi di dato</a>
+    <a href="#operatori">Operatori</a>
+    <a href="#controllo">Condizioni</a>
+    <a href="#cicli">Cicli</a>
+    <a href="#liste">Liste</a>
+    <a href="#funzioni">Funzioni</a>
+    <a href="#type">Il comando type()</a>
+    <a href="#tipi-dichiarazione">Tipi di dichiarazione</a>
+    <a href="#conversioni">Conversioni</a>
+    <a href="#string-index">s[] – Indici stringhe</a>
+    <a href="#backslash">Accapo con \n</a>
+</div>
+
+<header>
+    <h1>Prima Lezione di Python</h1>
+    <p>Spiegazione introduttiva per la Classe 2A Robotica</p>
+</header>
+
+<!-- QUI VANNO TUTTE LE TUE SEZIONI (intro, variabili, tipi, ecc.) -->
+<!-- Le hai già pronte, basta incollarle qui sotto -->
+
+<section id="intro">
+    <h2>1. Cos'è Python</h2>
+    <p>Python è un linguaggio semplice e potente...</p>
+</section>
+
+<section id="intro">
+    <h2>1. Cos'è Python</h2>
+    <p>
+        Ragazzi, oggi iniziamo a conoscere Python, uno dei linguaggi di programmazione più usati al mondo.
+        È semplice, pulito e perfetto per chi comincia. In robotica lo useremo per controllare sensori,
+        motori e piccoli robot. Pensate a Python come a un linguaggio che permette al computer di capire
+        cosa volete che faccia.
+    </p>
+</section>
+
+<section id="scrivere">
+    <h2>2. Come si scrive un programma</h2>
+    <p>
+        Un programma in Python è una serie di istruzioni che il computer esegue dall’alto verso il basso.
+        La cosa più importante da ricordare è che Python è molto attento agli spazi: se sbagliate gli spazi,
+        il programma non funziona. Non è cattivo, è solo preciso.
+    </p>
+
+    <p><strong>Esempio:</strong></p>
+    <code>
+if 5 > 2:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;print("È vero!")
+    </code>
+
+    <p>
+        Vedete quei quattro spazi sotto l’<strong>if</strong>? Sono fondamentali. Significano:
+        “Questa istruzione appartiene a quel blocco”.
+    </p>
+</section>
+
+<section id="variabili">
+    <h2>3. Le variabili</h2>
+    <p>
+        Una variabile è come una scatola in cui possiamo mettere un valore. Possiamo cambiare il contenuto
+        quando vogliamo. È uno dei concetti più importanti della programmazione.
+    </p>
+
+    <code>
+nome = "Anghelina"<br>
+eta = 12
+    </code>
+
+    <p>
+        Qui abbiamo due variabili: una contiene un testo, l’altra un numero. Python capisce da solo il tipo.
+    </p>
+</section>
+
+<section id="tipi">
+    <h2>4. I tipi di dato</h2>
+    <p>
+        Ogni valore ha un tipo. È come dire: “Questo è un numero”, “Questo è un testo”, “Questo è un elenco”.
+        I tipi principali sono:
+    </p>
+
+    <ul>
+        <li><strong>int</strong> – numeri interi</li>
+        <li><strong>float</strong> – numeri con la virgola</li>
+        <li><strong>str</strong> – stringhe, cioè testi</li>
+        <li><strong>bool</strong> – valori logici: True o False</li>
+        <li><strong>list</strong> – liste di valori</li>
+    </ul>
+</section>
+
+<section id="operatori">
+    <h2>5. Gli operatori</h2>
+    <p>
+        Gli operatori sono i simboli che permettono di fare calcoli o confronti.
+    </p>
+
+    <p><strong>Aritmetici:</strong></p>
+    <code>+  -  *  /  //  %  **</code>
+
+    <p><strong>Confronto:</strong></p>
+    <code>==  !=  >  <  >=  <=</code>
+
+    <p><strong>Logici:</strong></p>
+    <code>and  or  not</code>
+</section>
+
+<section id="controllo">
+    <h2>6. Le condizioni</h2>
+    <p>
+        Le condizioni permettono al programma di prendere decisioni. È come dire:
+        “Se succede questo, fai questo”.
+    </p>
+
+    <code>
+if temperatura > 25:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;print("Fa caldo")<br>
+else:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;print("Fa fresco")
+    </code>
+</section>
+
+<section id="cicli">
+    <h2>7. I cicli</h2>
+    <p>
+        I cicli servono per ripetere un’azione più volte. Sono fondamentali in robotica,
+        ad esempio per leggere continuamente un sensore.
+    </p>
+
+    <h3>Ciclo for</h3>
+    <code>
+for i in range(5):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;print(i)
+    </code>
+
+    <h3>Ciclo while</h3>
+    <code>
+while x < 10:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;x += 1
+    </code>
+</section>
+
+<section id="liste">
+    <h2>8. Le liste</h2>
+    <p>
+        Una lista è un contenitore che può contenere più valori. È molto utile quando dobbiamo
+        memorizzare più dati insieme.
+    </p>
+
+    <code>
+numeri = [1, 2, 3]<br>
+numeri.append(4)<br>
+print(numeri)
+    </code>
+</section>
+
+<section id="funzioni">
+    <h2>9. Le funzioni</h2>
+    <p>
+        Una funzione è un blocco di codice che svolge un compito preciso. Pensatela come una “macchina”
+        che fa qualcosa per voi.
+    </p>
+
+    <code>
+def saluta(nome):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;print("Ciao", nome)<br><br>
+saluta("Classe 2A")
+    </code>
+</section>
+
+<section id="type">
+    <h2>10. Il comando type()</h2>
+    <p>
+        Quando vogliamo sapere che tipo di dato contiene una variabile, usiamo <strong>type()</strong>.
+        È come chiedere a Python: “Che cosa sei?”.
+    </p>
+
+    <code>
+x = 10<br>
+print(type(x))  # &lt;class 'int'&gt;
+    </code>
+</section>
+
+<section id="tipi-dichiarazione">
+    <h2>11. I tipi di dichiarazione in Python</h2>
+    <p>
+        Ragazzi, ora che sappiamo usare <strong>type()</strong> per scoprire il tipo di una variabile,
+        è il momento di conoscere tutti i tipi principali che Python può riconoscere.
+        Pensate alle variabili come a delle scatole: il tipo dipende da ciò che ci mettete dentro.
+        Python capisce automaticamente il tipo senza che dobbiamo dirglielo noi.
+    </p>
+
+    <h3>11.1 <code>int</code> – Numeri interi</h3>
+    <code>
+x = 10<br>
+print(type(x))  # &lt;class 'int'&gt;
+    </code>
+
+    <h3>11.2 <code>float</code> – Numeri decimali</h3>
+    <code>
+temperatura = 23.7<br>
+print(type(temperatura))  # &lt;class 'float'&gt;
+    </code>
+
+    <h3>11.3 <code>str</code> – Stringhe</h3>
+    <code>
+nome = "Anghelina"<br>
+print(type(nome))  # &lt;class 'str'&gt;
+    </code>
+
+    <h3>11.4 <code>bool</code> – Valori logici</h3>
+    <code>
+attivo = True<br>
+print(type(attivo))  # &lt;class 'bool'&gt;
+    </code>
+
+    <h3>11.5 <code>list</code> – Liste</h3>
+    <code>
+numeri = [1, 2, 3]<br>
+print(type(numeri))  # &lt;class 'list'&gt;
+    </code>
+
+    <h3>11.6 <code>tuple</code> – Tuple</h3>
+    <code>
+coordinate = (10, 20)<br>
+print(type(coordinate))  # &lt;class 'tuple'&gt;
+    </code>
+
+    <h3>11.7 <code>set</code> – Insiemi</h3>
+    <code>
+colori = {"rosso", "verde", "blu"}<br>
+print(type(colori))  # &lt;class 'set'&gt;
+    </code>
+
+    <h3>11.8 <code>dict</code> – Dizionari</h3>
+    <code>
+robot = {"nome": "R2", "anno": 2024, "attivo": True}<br>
+print(type(robot))  # &lt;class 'dict'&gt;
+    </code>
+
+    <h3>11.9 <code>NoneType</code> – Nessun valore</h3>
+    <code>
+x = None<br>
+print(type(x))  # &lt;class 'NoneType'&gt;
+    </code>
+
+    <h3>11.10 <code>function</code> – Funzioni</h3>
+    <code>
+def saluta():<br>
+&nbsp;&nbsp;&nbsp;&nbsp;print("Ciao!")<br><br>
+print(type(saluta))  # &lt;class 'function'&gt;
+    </code>
+</section>
+
+<section id="conversioni">
+    <h2>12. Le conversioni di numeri: bin(), hex(), int()</h2>
+    <p>
+        Queste funzioni servono per trasformare i numeri in diversi sistemi numerici.
+        Sono molto utili in robotica e informatica.
+    </p>
+
+    <h3>12.1 La funzione bin()</h3>
+    <code>
+numero = 10<br>
+print(bin(numero))  # 0b1010
+    </code>
+
+    <h3>12.2 La funzione hex()</h3>
+    <code>
+numero = 255<br>
+print(hex(numero))  # 0xff
+    </code>
+
+    <h3>12.3 La funzione int()</h3>
+    <code>
+testo = "42"<br>
+numero = int(testo)<br>
+print(numero)  # 42
+    </code>
+
+    <p>Conversioni da altre basi:</p>
+
+    <code>
+binario = "1010"<br>
+print(int(binario, 2))  # 10<br><br>
+
+esadecimale = "ff"<br>
+print(int(esadecimale, 16))  # 255
+    </code>
+</section>
+
+<section id="string-index">
+    <h2>13. Leggere le stringhe con s[]</h2>
+    <p>
+        Le stringhe possono essere lette lettera per lettera usando le parentesi quadre.
+        Ogni carattere ha un numero chiamato indice.
+    </p>
+
+    <h3>13.1 Indici positivi</h3>
+    <code>
+testo = "Robot"<br>
+print(testo[0])  # R<br>
+print(testo[1])  # o<br>
+print(testo[2])  # b
+    </code>
+
+    <h3>13.2 Indici negativi</h3>
+    <code>
+testo = "Robot"<br>
+print(testo[-1])  # t<br>
+print(testo[-2])  # o
+    </code>
+
+    <h3>13.3 Slice (pezzi di stringa)</h3>
+    <code>
+testo = "Robotica"<br>
+print(testo[0:5])  # Robot<br>
+print(testo[2:7])  # botic
+    </code>
+
+    <code>
+print(testo[:5])  # Robot<br>
+print(testo[5:])  # ica
+    </code>
+</section>
+
+<section id="backslash">
+    <h2>14. Andare a capo con \n</h2>
+    <p>
+        Per andare a capo dentro una stringa usiamo <code>\n</code>.
+        È un carattere speciale chiamato “escape”.
+    </p>
+
+    <h3>14.1 Esempio</h3>
+    <code>
+print("Ciao\\ncome stai?")<br>
+# Ciao<br>
+# come stai?
+    </code>
+
+    <h3>14.2 Più accapo</h3>
+    <code>
+print("Linea 1\\nLinea 2\\nLinea 3")
+    </code>
+
+    <h3>14.3 Accapo in variabili</h3>
+    <code>
+testo = "Robotica\\nClasse 2A"<br>
+print(testo)
+    </code>
+
+    <h3>14.4 Scrivere una barra rovesciata</h3>
+    <code>
+print("C:\\\\Users\\\\Anghelina")<br>
+# C:\Users\Anghelina
+    </code>
+</section>
+
+</body>
+</html>
