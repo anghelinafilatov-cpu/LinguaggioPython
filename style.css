@@ -127,30 +127,6 @@ body.menu-open #sideNav {
 }
 
 
-/* Apertura barra */
-body.menu-open #sideNav {
-    left: 0;
-}
-
-
-
-/* Link della barra */
-#sideNav a {
-    padding: 14px 25px;
-    text-decoration: none;
-    font-size: 19px;
-    color: white;
-    display: block;
-    font-weight: 600;
-    border-bottom: 1px solid rgba(255,255,255,0.1);
-    transition: 0.2s;
-}
-
-#sideNav a:hover {
-    background: rgba(255,255,255,0.18);
-    padding-left: 35px;
-}
-
 /* ============================
    PULSANTI GRAFICI
 ============================ */
