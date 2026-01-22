@@ -4,45 +4,6 @@
     <meta charset="UTF-8">
     <title>Prima di Python</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            background-color: #f0f4f8;
-        }
-        header {
-            background-color: #003366;
-            color: white;
-            padding: 25px;
-            text-align: center;
-        }
-        nav {
-            background-color: #002244;
-            padding: 12px;
-            text-align: center;
-        }
-        nav a {
-            color: white;
-            margin: 0 15px;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        section {
-            background: white;
-            margin: 20px;
-            padding: 25px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px #bbb;
-        }
-        h2 {
-            color: #003366;
-        }
-        code {
-            background: #e8e8e8;
-            padding: 6px;
-            border-radius: 5px;
-            display: block;
-            margin-top: 5px;
-        }
         /* ============================
    TEMA CHIARO (DEFAULT)
 ============================ */
@@ -59,9 +20,9 @@
 }
 
 /* ============================
-   TEMA SCURO (ATTIVATO)
+   TEMA SCURO
 ============================ */
-#toggleTheme:checked ~ * {
+body.dark {
     --bg: #0f1117;
     --bg2: #1a1d26;
     --text: #e6e6e6;
@@ -79,37 +40,52 @@ body, section, header {
 }
 
 /* ============================
-   PULSANTI GRAFICI
+   STILE GENERALE
 ============================ */
-#themeBtn, #menuBtn {
-    position: fixed;
-    right: 20px;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    border: none;
-    cursor: pointer;
-    font-size: 22px;
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+}
+
+header {
+    background: linear-gradient(135deg, var(--accent), var(--accent2));
     color: white;
-    background: var(--accent);
+    padding: 35px;
+    text-align: center;
     box-shadow: 0 4px 12px var(--shadow);
+}
+
+section {
+    background: var(--bg2);
+    margin: 25px auto;
+    padding: 30px;
+    width: 85%;
+    max-width: 900px;
+    border-radius: 18px;
+    box-shadow: 0 6px 18px var(--shadow);
     transition: 0.3s;
-    z-index: 99999;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
-#themeBtn:hover, #menuBtn:hover {
-    transform: scale(1.1);
+h2 {
+    color: var(--accent);
+    border-left: 6px solid var(--accent);
+    padding-left: 12px;
 }
 
-#themeBtn {
-    bottom: 90px;
+h3 {
+    color: var(--accent2);
 }
 
-#menuBtn {
-    bottom: 20px;
+code {
+    background: var(--code-bg);
+    padding: 10px 14px;
+    border-radius: 10px;
+    display: block;
+    border-left: 5px solid var(--accent);
+    white-space: pre-wrap;
+    box-shadow: inset 0 0 8px var(--shadow);
 }
 
 /* ============================
@@ -129,8 +105,8 @@ body, section, header {
     z-index: 9999;
 }
 
-/* Quando il menu è attivo */
-#toggleMenu:checked ~ #sideNav {
+/* Apertura barra */
+body.menu-open #sideNav {
     right: 0;
 }
 
@@ -143,14 +119,7 @@ body, section, header {
     display: block;
     font-weight: 600;
     border-bottom: 1px solid rgba(255,255,255,0.1);
-    transition: 0.2s;
-}
-
-#sideNav a:hover {
-    background: rgba(255,255,255,0.18);
-    padding-left: 35px;
-}
-
+    transition
     </style>
 </head>
 
@@ -719,5 +688,6 @@ print("C:\\\\Users\\\\Anghelina")<br>
 
 
 </body>
+
 
 >
