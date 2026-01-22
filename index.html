@@ -2,11 +2,48 @@
 <html lang="it">
 <head>
     <meta charset="UTF-8">
-    <title>Lezione Python – Classe 2A Robotica</title>
-
-<style>
-
-/* ============================
+    <title>Prima di Python</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #f0f4f8;
+        }
+        header {
+            background-color: #003366;
+            color: white;
+            padding: 25px;
+            text-align: center;
+        }
+        nav {
+            background-color: #002244;
+            padding: 12px;
+            text-align: center;
+        }
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        section {
+            background: white;
+            margin: 20px;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px #bbb;
+        }
+        h2 {
+            color: #003366;
+        }
+        code {
+            background: #e8e8e8;
+            padding: 6px;
+            border-radius: 5px;
+            display: block;
+            margin-top: 5px;
+        }
+        /* ============================
    TEMA CHIARO (DEFAULT)
 ============================ */
 :root {
@@ -39,92 +76,6 @@
 /* Animazione cambio tema */
 body, section, header {
     transition: background 0.4s ease, color 0.4s ease;
-}
-
-/* ============================
-   STILE GENERALE
-============================ */
-body {
-    font-family: "Segoe UI", Arial, sans-serif;
-    margin: 0;
-    background: var(--bg);
-    color: var(--text);
-}
-
-header {
-    background: linear-gradient(135deg, var(--accent), var(--accent2));
-    color: white;
-    padding: 35px;
-    text-align: center;
-    box-shadow: 0 4px 12px var(--shadow);
-}
-
-section {
-    background: var(--bg2);
-    margin: 25px auto;
-    padding: 30px;
-    width: 85%;
-    max-width: 900px;
-    border-radius: 18px;
-    box-shadow: 0 6px 18px var(--shadow);
-    transition: 0.3s;
-}
-
-h2 {
-    color: var(--accent);
-    border-left: 6px solid var(--accent);
-    padding-left: 12px;
-}
-
-h3 {
-    color: var(--accent2);
-}
-
-code {
-    background: var(--code-bg);
-    padding: 10px 14px;
-    border-radius: 10px;
-    display: block;
-    border-left: 5px solid var(--accent);
-    white-space: pre-wrap;
-    box-shadow: inset 0 0 8px var(--shadow);
-}
-
-/* ============================
-   NAV LATERALE
-============================ */
-#sideNav {
-    height: 100%;
-    width: 280px;
-    position: fixed;
-    top: 0;
-    right: -300px;
-    background: linear-gradient(180deg, var(--nav-bg1), var(--nav-bg2));
-    padding-top: 70px;
-    transition: 0.4s ease-in-out;
-    box-shadow: -5px 0 20px var(--shadow);
-    border-radius: 20px 0 0 20px;
-    z-index: 9999;
-}
-
-#toggleMenu:checked ~ #sideNav {
-    right: 0;
-}
-
-#sideNav a {
-    padding: 14px 25px;
-    text-decoration: none;
-    font-size: 19px;
-    color: white;
-    display: block;
-    font-weight: 600;
-    border-bottom: 1px solid rgba(255,255,255,0.1);
-    transition: 0.2s;
-}
-
-#sideNav a:hover {
-    background: rgba(255,255,255,0.18);
-    padding-left: 35px;
 }
 
 /* ============================
@@ -161,7 +112,46 @@ code {
     bottom: 20px;
 }
 
-</style>
+/* ============================
+   NAV LATERALE
+============================ */
+#sideNav {
+    height: 100%;
+    width: 280px;
+    position: fixed;
+    top: 0;
+    right: -300px;
+    background: linear-gradient(180deg, var(--nav-bg1), var(--nav-bg2));
+    padding-top: 70px;
+    transition: 0.4s ease-in-out;
+    box-shadow: -5px 0 20px var(--shadow);
+    border-radius: 20px 0 0 20px;
+    z-index: 9999;
+}
+
+/* Quando il menu è attivo */
+#toggleMenu:checked ~ #sideNav {
+    right: 0;
+}
+
+/* Link della barra */
+#sideNav a {
+    padding: 14px 25px;
+    text-decoration: none;
+    font-size: 19px;
+    color: white;
+    display: block;
+    font-weight: 600;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    transition: 0.2s;
+}
+
+#sideNav a:hover {
+    background: rgba(255,255,255,0.18);
+    padding-left: 35px;
+}
+
+    </style>
 </head>
 
 <body>
@@ -174,7 +164,52 @@ code {
 <label for="toggleTheme" id="themeBtn">🌗</label>
 <label for="toggleMenu" id="menuBtn">📘</label>
 
-<!-- NAV LATERALE -->
+<header>
+    <h1>Lezione di Python</h1>
+    <p>Spiegazione del linguaggio di python</p>
+</header>
+
+<!-- NAV LATERALE A DESTRA -->
+<style>
+    #sideNav {
+        height: 100%;
+        width: 260px;
+        position: fixed;
+        top: 0;
+        right: -260px; /* nascosta */
+        background-color: #002244;
+        padding-top: 60px;
+        transition: 0.4s;
+        box-shadow: -3px 0 10px rgba(0,0,0,0.3);
+        z-index: 9999;
+    }
+
+    #sideNav a {
+        padding: 12px 20px;
+        text-decoration: none;
+        font-size: 18px;
+        color: white;
+        display: block;
+        font-weight: bold;
+    }
+
+    #sideNav a:hover {
+        background-color: #003366;
+    }
+
+    #openHint {
+        position: fixed;
+        right: 10px;
+        bottom: 10px;
+        background: #003366;
+        color: white;
+        padding: 10px 15px;
+        border-radius: 8px;
+        font-size: 14px;
+        box-shadow: 0 0 10px #0005;
+    }
+</style>
+
 <div id="sideNav">
     <a href="#intro">Cos'è Python</a>
     <a href="#scrivere">Come si scrive</a>
@@ -190,15 +225,25 @@ code {
     <a href="#conversioni">Conversioni</a>
     <a href="#string-index">s[] – Indici stringhe</a>
     <a href="#backslash">Accapo con \n</a>
+    <a href="# "> </a>
 </div>
 
-<header>
-    <h1>Prima Lezione di Python</h1>
-    <p>Spiegazione introduttiva per la Classe 2A Robotica</p>
-</header>
+<script>
+    let navOpen = false;
 
-<!-- QUI VANNO TUTTE LE TUE SEZIONI (intro, variabili, tipi, ecc.) -->
-<!-- Le hai già pronte, basta incollarle qui sotto -->
+    document.addEventListener("keydown", function(event) {
+        if (event.key === "l" || event.key === "L") {
+            const nav = document.getElementById("sideNav");
+            if (navOpen) {
+                nav.style.right = "-260px";
+                navOpen = false;
+            } else {
+                nav.style.right = "0";
+                navOpen = true;
+            }
+        }
+    });
+</script>
 
 <section id="intro">
     <h2>1. Cos'è Python</h2>
@@ -365,171 +410,316 @@ print(type(x))  # &lt;class 'int'&gt;
     </p>
 
     <h3>11.1 <code>int</code> – Numeri interi</h3>
+    <p>
+        Sono numeri senza virgola. Li usiamo per contare, misurare e fare calcoli semplici.
+    </p>
     <code>
 x = 10<br>
 print(type(x))  # &lt;class 'int'&gt;
     </code>
 
     <h3>11.2 <code>float</code> – Numeri decimali</h3>
+    <p>
+        Quando serve la virgola (che in Python si scrive con il punto), usiamo i float.
+        Molto utili per sensori e misurazioni precise.
+    </p>
     <code>
 temperatura = 23.7<br>
 print(type(temperatura))  # &lt;class 'float'&gt;
     </code>
 
-    <h3>11.3 <code>str</code> – Stringhe</h3>
+    <h3>11.3 <code>str</code> – Stringhe (testo)</h3>
+    <p>
+        Tutto ciò che è testo va tra virgolette. Le stringhe servono per messaggi, nomi e comunicazioni.
+    </p>
     <code>
 nome = "Anghelina"<br>
 print(type(nome))  # &lt;class 'str'&gt;
     </code>
 
-    <h3>11.4 <code>bool</code> – Valori logici</h3>
+    <h3>11.4 <code>bool</code> – Valori logici (vero/falso)</h3>
+    <p>
+        Questo tipo può essere solo <strong>True</strong> o <strong>False</strong>.
+        È fondamentale per far prendere decisioni ai programmi.
+    </p>
     <code>
 attivo = True<br>
 print(type(attivo))  # &lt;class 'bool'&gt;
     </code>
 
     <h3>11.5 <code>list</code> – Liste</h3>
+    <p>
+        Una lista è un contenitore che può contenere più valori. È molto utile quando dobbiamo
+        memorizzare più dati insieme.
+    </p>
     <code>
-numeri = [1, 2, 3]<br>
+numeri = [1, 2, 3, 4]<br>
 print(type(numeri))  # &lt;class 'list'&gt;
     </code>
 
     <h3>11.6 <code>tuple</code> – Tuple</h3>
+    <p>
+        Simili alle liste, ma non si possono modificare. Perfette per dati che non devono cambiare.
+    </p>
     <code>
 coordinate = (10, 20)<br>
 print(type(coordinate))  # &lt;class 'tuple'&gt;
     </code>
 
     <h3>11.7 <code>set</code> – Insiemi</h3>
+    <p>
+        Un insieme contiene valori unici, senza ordine e senza duplicati.
+    </p>
     <code>
 colori = {"rosso", "verde", "blu"}<br>
 print(type(colori))  # &lt;class 'set'&gt;
     </code>
 
     <h3>11.8 <code>dict</code> – Dizionari</h3>
+    <p>
+        Un dizionario contiene coppie <strong>chiave → valore</strong>.
+        È come una scheda tecnica di un robot.
+    </p>
     <code>
 robot = {"nome": "R2", "anno": 2024, "attivo": True}<br>
 print(type(robot))  # &lt;class 'dict'&gt;
     </code>
 
     <h3>11.9 <code>NoneType</code> – Nessun valore</h3>
+    <p>
+        Quando una variabile non contiene nulla, Python la considera di tipo <strong>NoneType</strong>.
+    </p>
     <code>
 x = None<br>
 print(type(x))  # &lt;class 'NoneType'&gt;
     </code>
 
     <h3>11.10 <code>function</code> – Funzioni</h3>
+    <p>
+        Anche le funzioni sono un tipo di dato. Python tratta tutto come oggetti, anche il codice.
+    </p>
     <code>
 def saluta():<br>
 &nbsp;&nbsp;&nbsp;&nbsp;print("Ciao!")<br><br>
 print(type(saluta))  # &lt;class 'function'&gt;
     </code>
+
+    <p>
+        Conoscere i tipi è fondamentale per capire come funzionano i programmi e come i robot interpretano i dati.
+    </p>
 </section>
+
 
 <section id="conversioni">
     <h2>12. Le conversioni di numeri: bin(), hex(), int()</h2>
     <p>
-        Queste funzioni servono per trasformare i numeri in diversi sistemi numerici.
-        Sono molto utili in robotica e informatica.
+        Ragazzi, ora che abbiamo capito come funzionano i numeri in Python, vi presento tre funzioni
+        molto utili quando si lavora con la robotica, l’elettronica e i sistemi digitali.
+        Sono <strong>bin()</strong>, <strong>hex()</strong> e <strong>int()</strong>.
+        Non spaventatevi: sono più semplici di quanto sembrano.
     </p>
 
     <h3>12.1 La funzione bin()</h3>
+    <p>
+        La funzione <strong>bin()</strong> serve per trasformare un numero in <strong>binario</strong>,
+        cioè nel linguaggio fatto solo di 0 e 1 che usano i computer e i robot.
+    </p>
     <code>
 numero = 10<br>
-print(bin(numero))  # 0b1010
+print(bin(numero))  # Risultato: 0b1010
     </code>
+    <p>
+        Quel <strong>0b</strong> all’inizio significa semplicemente “questo è un numero binario”.
+    </p>
 
     <h3>12.2 La funzione hex()</h3>
+    <p>
+        La funzione <strong>hex()</strong> trasforma un numero in <strong>esadecimale</strong>,
+        un sistema molto usato nei microcontrollori, nei colori e nella memoria dei computer.
+    </p>
     <code>
 numero = 255<br>
-print(hex(numero))  # 0xff
+print(hex(numero))  # Risultato: 0xff
     </code>
+    <p>
+        Anche qui, il prefisso <strong>0x</strong> indica che il numero è esadecimale.
+    </p>
 
     <h3>12.3 La funzione int()</h3>
+    <p>
+        La funzione <strong>int()</strong> fa l’operazione opposta: trasforma qualcosa in un numero intero.
+        È utilissima quando riceviamo dati come testo e dobbiamo convertirli in numeri.
+    </p>
     <code>
 testo = "42"<br>
 numero = int(testo)<br>
-print(numero)  # 42
+print(numero)  # Risultato: 42
     </code>
 
-    <p>Conversioni da altre basi:</p>
-
+    <p>
+        Possiamo anche convertire numeri da altre basi:
+    </p>
     <code>
 binario = "1010"<br>
-print(int(binario, 2))  # 10<br><br>
+print(int(binario, 2))  # Risultato: 10<br><br>
 
 esadecimale = "ff"<br>
-print(int(esadecimale, 16))  # 255
+print(int(esadecimale, 16))  # Risultato: 255
     </code>
+
+    <p>
+        In questo modo Python capisce che il numero è scritto in base 2 (binario) o base 16 (esadecimale).
+    </p>
 </section>
 
 <section id="string-index">
     <h2>13. Leggere le stringhe con s[]</h2>
     <p>
-        Le stringhe possono essere lette lettera per lettera usando le parentesi quadre.
-        Ogni carattere ha un numero chiamato indice.
+        Ragazzi, ora vediamo una cosa molto importante quando lavoriamo con il testo in Python.
+        Le stringhe, cioè i testi, possono essere lette <strong>lettera per lettera</strong>.
+        Per farlo usiamo le parentesi quadre <code>[]</code>.
     </p>
 
-    <h3>13.1 Indici positivi</h3>
+    <p>
+        Pensate a una stringa come a una fila di lettere, ognuna con un numero chiamato
+        <strong>indice</strong>. Python inizia a contare da 0, non da 1.
+    </p>
+
+    <h3>13.1 Come funziona l’indice</h3>
     <code>
 testo = "Robot"<br>
 print(testo[0])  # R<br>
 print(testo[1])  # o<br>
-print(testo[2])  # b
+print(testo[2])  # b<br>
+print(testo[3])  # o<br>
+print(testo[4])  # t
     </code>
 
+    <p>
+        Ogni lettera ha un numero:
+    </p>
+
+    <ul>
+        <li>R → indice 0</li>
+        <li>o → indice 1</li>
+        <li>b → indice 2</li>
+        <li>o → indice 3</li>
+        <li>t → indice 4</li>
+    </ul>
+
     <h3>13.2 Indici negativi</h3>
+    <p>
+        Python permette anche di contare <strong>al contrario</strong> usando indici negativi.
+        L’ultimo carattere ha indice -1.
+    </p>
+
     <code>
 testo = "Robot"<br>
 print(testo[-1])  # t<br>
-print(testo[-2])  # o
+print(testo[-2])  # o<br>
+print(testo[-3])  # b
     </code>
 
-    <h3>13.3 Slice (pezzi di stringa)</h3>
+    <h3>13.3 Estrarre più lettere (slice)</h3>
+    <p>
+        Possiamo prendere un pezzo di stringa usando <code>s[inizio:fine]</code>.
+        Python prende le lettere da <strong>inizio</strong> fino a <strong>fine-1</strong>.
+    </p>
+
     <code>
 testo = "Robotica"<br>
 print(testo[0:5])  # Robot<br>
 print(testo[2:7])  # botic
     </code>
 
+    <p>
+        Se omettiamo l’inizio o la fine, Python prende tutto il resto.
+    </p>
+
     <code>
-print(testo[:5])  # Robot<br>
-print(testo[5:])  # ica
+print(testo[:5])   # Robot<br>
+print(testo[5:])   # ica
     </code>
+
+    <p>
+        Questo sistema è fondamentale quando vogliamo analizzare testi, leggere comandi,
+        o estrarre parti di un messaggio inviato da un robot o da un sensore.
+    </p>
 </section>
 
 <section id="backslash">
-    <h2>14. Andare a capo con \n</h2>
+    <h2>14. Andare a capo con il carattere \n in Python</h2>
     <p>
-        Per andare a capo dentro una stringa usiamo <code>\n</code>.
-        È un carattere speciale chiamato “escape”.
+        Ragazzi, ora vediamo una cosa molto utile quando lavoriamo con il testo in Python:
+        <strong>come andare a capo dentro una stringa</strong> senza dover scrivere più print.
     </p>
 
-    <h3>14.1 Esempio</h3>
+    <p>
+        Per andare a capo dentro una stringa usiamo la sequenza speciale:
+        <code>\n</code>
+        Si chiama <strong>carattere di escape</strong> e dice a Python:
+        “Qui voglio un accapo”.
+    </p>
+
+    <h3>14.1 Esempio semplice</h3>
     <code>
 print("Ciao\\ncome stai?")<br>
+# Risultato:<br>
 # Ciao<br>
 # come stai?
     </code>
 
-    <h3>14.2 Più accapo</h3>
+    <p>
+        Vedete? Anche se abbiamo scritto una sola print, Python va a capo grazie a <code>\n</code>.
+    </p>
+
+    <h3>14.2 Più accapo nella stessa stringa</h3>
     <code>
 print("Linea 1\\nLinea 2\\nLinea 3")
     </code>
 
-    <h3>14.3 Accapo in variabili</h3>
+    <p>
+        Ogni <code>\n</code> crea un nuovo accapo.
+    </p>
+
+    <h3>14.3 Accapo dentro variabili</h3>
     <code>
 testo = "Robotica\\nClasse 2A"<br>
 print(testo)
     </code>
 
-    <h3>14.4 Scrivere una barra rovesciata</h3>
+    <p>
+        Funziona allo stesso modo anche dentro una variabile.
+    </p>
+
+    <h3>14.4 Attenzione alla barra rovesciata</h3>
+    <p>
+        La barra rovesciata <code>\</code> da sola non può essere scritta nelle stringhe,
+        perché Python la usa per i comandi speciali come <code>\n</code>, <code>\t</code>, <code>\\</code>.
+        Se vuoi scrivere una barra rovesciata vera, devi farne due:
+    </p>
+
     <code>
 print("C:\\\\Users\\\\Anghelina")<br>
-# C:\Users\Anghelina
+# Risultato: C:\Users\Anghelina
     </code>
+
+    <p>
+        Questo perché <code>\\</code> significa: “stampa una barra rovesciata vera”.
+    </p>
+
+    <p>
+        Ora sapete come controllare gli accapo dentro le stringhe, una cosa molto utile quando
+        formattiamo messaggi, testi o output dei nostri programmi.
+    </p>
 </section>
 
+
+
+
+
 </body>
-</html>
+
+
+
 
