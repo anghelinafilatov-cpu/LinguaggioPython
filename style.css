@@ -101,9 +101,6 @@ code {
     max-height: 100vh;
 }
 
-
-}
-
 /* Apertura barra */
 body.menu-open #sideNav {
     left: 0;
