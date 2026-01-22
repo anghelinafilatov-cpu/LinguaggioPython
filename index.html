@@ -37,6 +37,7 @@
     <a href="#string-index">s[] – Indici stringhe</a>
     <a href="#backslash">Accapo con \n</a>
     <a href="# "> </a>
+    <a href="#upper-lower">upper() e lower()</a>
 </div>
 
 <section id="intro">
@@ -508,6 +509,75 @@ print("C:\\\\Users\\\\Anghelina")<br>
     </p>
 </section>
 
+        <section id="upper-lower">
+    <h2>15. I metodi upper() e lower()</h2>
+    <p>
+        Ragazzi, oggi vediamo due strumenti molto utili quando lavoriamo con il testo in Python.
+        Si chiamano <strong>upper()</strong> e <strong>lower()</strong> e servono per trasformare
+        una stringa tutta in maiuscolo o tutta in minuscolo. Sono fondamentali quando vogliamo
+        confrontare parole senza preoccuparci delle lettere grandi o piccole.
+    </p>
+
+    <h3>15.1 Il metodo lower()</h3>
+    <p>
+        Il metodo <strong>lower()</strong> trasforma tutte le lettere di una stringa in minuscolo.
+        È molto utile quando vogliamo confrontare due parole ignorando le maiuscole.
+    </p>
+
+    <code>
+nome = "Anghelina"<br>
+print(nome.lower())  # anghelina
+    </code>
+
+    <p>
+        La variabile originale non cambia: è <code>lower()</code> che crea una versione tutta minuscola.
+    </p>
+
+    <h3>15.2 Il metodo upper()</h3>
+    <p>
+        Il metodo <strong>upper()</strong> fa l’opposto: trasforma tutte le lettere in maiuscolo.
+        È utile quando vogliamo mostrare un messaggio “in grande” o standardizzare il testo.
+    </p>
+
+    <code>
+messaggio = "Benvenuti in robotica"<br>
+print(messaggio.upper())  # BENVENUTI IN ROBOTICA
+    </code>
+
+    <h3>15.3 Perché sono così utili?</h3>
+    <p>
+        Quando chiediamo un input all’utente, non possiamo sapere se scriverà in maiuscolo o minuscolo.
+        Per il computer, però, <code>"SI"</code>, <code>"Si"</code> e <code>"si"</code> sono stringhe diverse.
+        Con <strong>lower()</strong> risolviamo il problema.
+    </p>
+
+    <code>
+risposta = input("Vuoi continuare? (si/no) ")<br><br>
+if risposta.lower() == "si":<br>
+&nbsp;&nbsp;&nbsp;&nbsp;print("Ok, continuiamo!")<br>
+else:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;print("Ci fermiamo qui.")
+    </code>
+
+    <h3>15.4 Esercizi</h3>
+    <p><strong>Esercizio 1:</strong> chiedi il nome all’utente e stampalo tutto in maiuscolo.</p>
+
+    <code>
+nome = input("Come ti chiami? ")<br>
+print(nome.upper())
+    </code>
+
+    <p><strong>Esercizio 2:</strong> controlla se l’utente scrive “robot”, ignorando maiuscole e minuscole.</p>
+
+    <code>
+parola = input("Scrivi una parola: ")<br><br>
+if parola.lower() == "robot":<br>
+&nbsp;&nbsp;&nbsp;&nbsp;print("Hai scritto 'robot'!")<br>
+else:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;print("Non hai scritto 'robot'.")
+    </code>
+</section>
+
         <script>
 document.getElementById("themeBtn").onclick = () => {
     document.body.classList.toggle("dark");
@@ -517,8 +587,9 @@ document.getElementById("menuBtn").onclick = () => {
     document.body.classList.toggle("menu-open");
 };
 </script>
-#upper e lower aggiungere
+
 </body>
+
 
 
 
