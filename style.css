@@ -1,41 +1,46 @@
-/* ============================
-   TEMA PASTEL MINIMAL (NUOVO)
+//* ============================
+   TEMA CHIARO (PYTHON)
 ============================ */
 :root {
-    --bg: #f7f5f2;
+    --bg: #f0f4ff;
     --bg2: #ffffff;
-    --text: #3a3a3a;
-    --accent: #ff8ba7;
-    --accent2: #ffc6d9;
-    --code-bg: #fff3f7;
-    --shadow: rgba(0,0,0,0.08);
-    --nav-bg1: #ff8ba7;
-    --nav-bg2: #ffc6d9;
+    --text: #1e1e1e;
+    --accent: #306998;   /* Blu Python */
+    --accent2: #FFD43B;  /* Giallo Python */
+    --code-bg: #e8efff;
+    --shadow: rgba(0,0,0,0.15);
+    --nav-bg1: #306998;
+    --nav-bg2: #4a82c7;
 }
 
 /* ============================
-   TEMA SCURO PASTEL
+   TEMA SCURO (PYTHON)
 ============================ */
 body.dark {
-    --bg: #1b1b1b;
-    --bg2: #262626;
-    --text: #f2f2f2;
-    --accent: #ffb3c6;
-    --accent2: #ffd6e0;
-    --code-bg: #2e2e2e;
-    --shadow: rgba(0,0,0,0.5);
-    --nav-bg1: #2e2e2e;
-    --nav-bg2: #3a3a3a;
+    --bg: #0d0f14;
+    --bg2: #161a22;
+    --text: #e6e6e6;
+    --accent: #4a82c7;
+    --accent2: #FFD43B;
+    --code-bg: #1f2330;
+    --shadow: rgba(0,0,0,0.6);
+    --nav-bg1: #1f2330;
+    --nav-bg2: #2a3040;
+}
+
+/* Animazione cambio tema */
+body, section, header {
+    transition: background 0.4s ease, color 0.4s ease;
 }
 
 /* ============================
-   SFONDO A TEMA PYTHON
+   SFONDO PYTHON
 ============================ */
 body {
-    background: var(--bg) url("URL-DELLA-TUA-IMMAGINE-PYTHON") no-repeat center center fixed;
-    background-size: cover;
-    font-family: "Poppins", sans-serif;
+    font-family: "Segoe UI", Arial, sans-serif;
     margin: 0;
+    background: var(--bg) url("URL-DELLA-TUA-IMMAGINE") no-repeat center center fixed;
+    background-size: cover;
     color: var(--text);
 }
 
@@ -47,27 +52,22 @@ body::before {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(48,105,152,0.35); /* blu Python */
+    background: rgba(48,105,152,0.35); /* blu Python trasparente */
     backdrop-filter: blur(3px);
     z-index: -1;
-}
-
-/* Animazioni */
-body, section, header {
-    transition: background 0.4s ease, color 0.4s ease;
 }
 
 /* ============================
    HEADER
 ============================ */
 header {
-    background: var(--accent);
+    background: linear-gradient(135deg, var(--accent), var(--accent2));
     color: white;
-    padding: 40px;
+    padding: 35px;
     text-align: center;
-    border-bottom-left-radius: 40px;
-    border-bottom-right-radius: 40px;
     box-shadow: 0 4px 12px var(--shadow);
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
 }
 
 /* ============================
@@ -75,39 +75,37 @@ header {
 ============================ */
 section {
     background: var(--bg2);
-    margin: 30px auto;
-    padding: 35px;
+    margin: 25px auto;
+    padding: 30px;
     width: 85%;
-    max-width: 850px;
-    border-radius: 25px;
+    max-width: 900px;
+    border-radius: 18px;
     box-shadow: 0 6px 18px var(--shadow);
-    transition: transform 0.3s;
+    transition: 0.3s;
 }
 
 section:hover {
-    transform: translateY(-4px);
+    transform: translateY(-3px);
 }
 
 h2 {
     color: var(--accent);
-    font-weight: 700;
-    border-left: 8px solid var(--accent);
-    padding-left: 14px;
+    border-left: 6px solid var(--accent);
+    padding-left: 12px;
 }
 
 h3 {
     color: var(--accent2);
-    font-weight: 600;
 }
 
 code {
     background: var(--code-bg);
-    padding: 12px 16px;
-    border-radius: 12px;
+    padding: 10px 14px;
+    border-radius: 10px;
     display: block;
-    border-left: 6px solid var(--accent);
+    border-left: 5px solid var(--accent);
     white-space: pre-wrap;
-    box-shadow: inset 0 0 10px var(--shadow);
+    box-shadow: inset 0 0 8px var(--shadow);
 }
 
 /* ============================
@@ -115,17 +113,17 @@ code {
 ============================ */
 #sideNav {
     position: fixed;
-    right: -260px;
+    right: -250px;
     top: 0;
-    width: 260px;
+    width: 250px;
     height: 100vh;
     background: linear-gradient(135deg, var(--nav-bg1), var(--nav-bg2));
     box-shadow: -4px 0 12px var(--shadow);
     transition: right 0.3s ease;
     overflow-y: auto;
-    padding-top: 25px;
+    padding-top: 20px;
     z-index: 9999;
-    border-left: 4px solid var(--accent);
+    border-left: 3px solid var(--accent2);
 }
 
 body.menu-open #sideNav {
@@ -133,19 +131,19 @@ body.menu-open #sideNav {
 }
 
 #sideNav a {
-    padding: 16px 28px;
+    padding: 14px 25px;
     text-decoration: none;
-    font-size: 18px;
+    font-size: 19px;
     color: white;
     display: block;
     font-weight: 600;
-    border-bottom: 1px solid rgba(255,255,255,0.15);
+    border-bottom: 1px solid rgba(255,255,255,0.1);
     transition: 0.2s;
 }
 
 #sideNav a:hover {
-    background: rgba(255,255,255,0.25);
-    padding-left: 40px;
+    background: rgba(255,255,255,0.18);
+    padding-left: 35px;
 }
 
 /* ============================
@@ -154,8 +152,8 @@ body.menu-open #sideNav {
 #themeBtn, #menuBtn {
     position: fixed;
     right: 20px;
-    width: 55px;
-    height: 55px;
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
     border: none;
     cursor: pointer;
@@ -171,16 +169,17 @@ body.menu-open #sideNav {
 }
 
 #themeBtn:hover, #menuBtn:hover {
-    transform: scale(1.12);
+    transform: scale(1.1);
 }
 
 #themeBtn {
-    bottom: 95px;
+    bottom: 90px;
 }
 
 #menuBtn {
-    bottom: 25px;
+    bottom: 20px;
 }
+
 
 #menuBtn {
     bottom: 20px;
