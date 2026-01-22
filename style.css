@@ -101,6 +101,10 @@ code {
     box-shadow: -5px 0 20px var(--shadow);
     border-radius: 20px 0 0 20px;
     z-index: 9999;
+    overflow-y: auto;
+    max-height: 100vh;
+}
+
 }
 
 /* Apertura barra */
