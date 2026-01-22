@@ -1,34 +1,34 @@
 /* ============================
-   TEMA CHIARO (DEFAULT)
+   TEMA PASTEL MINIMAL (NUOVO)
 ============================ */
 :root {
-    --bg: #e8f0ff;
+    --bg: #f7f5f2;
     --bg2: #ffffff;
-    --text: #2a2a2a;
-    --accent: #4a6cf7;
-    --accent2: #6a8bff;
-    --code-bg: #f4f6ff;
-    --shadow: rgba(0,0,0,0.15);
-    --nav-bg1: #4a6cf7;
-    --nav-bg2: #6a8bff;
+    --text: #3a3a3a;
+    --accent: #ff8ba7;
+    --accent2: #ffc6d9;
+    --code-bg: #fff3f7;
+    --shadow: rgba(0,0,0,0.08);
+    --nav-bg1: #ff8ba7;
+    --nav-bg2: #ffc6d9;
 }
 
 /* ============================
-   TEMA SCURO
+   TEMA SCURO PASTEL
 ============================ */
 body.dark {
-    --bg: #0f1117;
-    --bg2: #1a1d26;
-    --text: #e6e6e6;
-    --accent: #7aa2ff;
-    --accent2: #9bb8ff;
-    --code-bg: #1f2330;
-    --shadow: rgba(0,0,0,0.6);
-    --nav-bg1: #1f2330;
-    --nav-bg2: #2a3040;
+    --bg: #1b1b1b;
+    --bg2: #262626;
+    --text: #f2f2f2;
+    --accent: #ffb3c6;
+    --accent2: #ffd6e0;
+    --code-bg: #2e2e2e;
+    --shadow: rgba(0,0,0,0.5);
+    --nav-bg1: #2e2e2e;
+    --nav-bg2: #3a3a3a;
 }
 
-/* Animazione cambio tema */
+/* Animazioni */
 body, section, header {
     transition: background 0.4s ease, color 0.4s ease;
 }
@@ -37,105 +37,105 @@ body, section, header {
    STILE GENERALE
 ============================ */
 body {
-    font-family: "Segoe UI", Arial, sans-serif;
+    font-family: "Poppins", sans-serif;
     margin: 0;
     background: var(--bg);
     color: var(--text);
 }
 
 header {
-    background: linear-gradient(135deg, var(--accent), var(--accent2));
+    background: var(--accent);
     color: white;
-    padding: 35px;
+    padding: 40px;
     text-align: center;
+    border-bottom-left-radius: 40px;
+    border-bottom-right-radius: 40px;
     box-shadow: 0 4px 12px var(--shadow);
 }
 
 section {
     background: var(--bg2);
-    margin: 25px auto;
-    padding: 30px;
+    margin: 30px auto;
+    padding: 35px;
     width: 85%;
-    max-width: 900px;
-    border-radius: 18px;
+    max-width: 850px;
+    border-radius: 25px;
     box-shadow: 0 6px 18px var(--shadow);
-    transition: 0.3s;
+    transition: transform 0.3s;
 }
 
 section:hover {
-    transform: translateY(-3px);
+    transform: translateY(-4px);
 }
 
 h2 {
     color: var(--accent);
-    border-left: 6px solid var(--accent);
-    padding-left: 12px;
+    font-weight: 700;
+    border-left: 8px solid var(--accent);
+    padding-left: 14px;
 }
 
 h3 {
     color: var(--accent2);
+    font-weight: 600;
 }
 
 code {
     background: var(--code-bg);
-    padding: 10px 14px;
-    border-radius: 10px;
+    padding: 12px 16px;
+    border-radius: 12px;
     display: block;
-    border-left: 5px solid var(--accent);
+    border-left: 6px solid var(--accent);
     white-space: pre-wrap;
-    box-shadow: inset 0 0 8px var(--shadow);
+    box-shadow: inset 0 0 10px var(--shadow);
 }
 
 /* ============================
-   NAV LATERALE (A DESTRA)
+   NAV LATERALE
 ============================ */
 #sideNav {
     position: fixed;
-    right: -250px; /* nascosto a destra */
+    right: -260px;
     top: 0;
-    width: 250px;
+    width: 260px;
     height: 100vh;
     background: linear-gradient(135deg, var(--nav-bg1), var(--nav-bg2));
     box-shadow: -4px 0 12px var(--shadow);
     transition: right 0.3s ease;
     overflow-y: auto;
-    padding-top: 20px;
+    padding-top: 25px;
     z-index: 9999;
-    border-left: 3px solid var(--accent);
+    border-left: 4px solid var(--accent);
 }
 
-/* Apertura barra */
 body.menu-open #sideNav {
     right: 0;
 }
 
-/* Link della barra */
 #sideNav a {
-    padding: 14px 25px;
+    padding: 16px 28px;
     text-decoration: none;
-    font-size: 19px;
+    font-size: 18px;
     color: white;
     display: block;
     font-weight: 600;
-    border-bottom: 1px solid rgba(255,255,255,0.1);
+    border-bottom: 1px solid rgba(255,255,255,0.15);
     transition: 0.2s;
 }
 
 #sideNav a:hover {
-    background: rgba(255,255,255,0.18);
-    padding-left: 35px;
+    background: rgba(255,255,255,0.25);
+    padding-left: 40px;
 }
 
-
-
 /* ============================
-   PULSANTI GRAFICI
+   PULSANTI FLOTANTI
 ============================ */
 #themeBtn, #menuBtn {
     position: fixed;
     right: 20px;
-    width: 50px;
-    height: 50px;
+    width: 55px;
+    height: 55px;
     border-radius: 50%;
     border: none;
     cursor: pointer;
@@ -151,11 +151,15 @@ body.menu-open #sideNav {
 }
 
 #themeBtn:hover, #menuBtn:hover {
-    transform: scale(1.1);
+    transform: scale(1.12);
 }
 
 #themeBtn {
-    bottom: 90px;
+    bottom: 95px;
+}
+
+#menuBtn {
+    bottom: 25px;
 }
 
 #menuBtn {
