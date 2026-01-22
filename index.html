@@ -39,23 +39,6 @@
     <a href="# "> </a>
 </div>
 
-<script>
-    let navOpen = false;
-
-    document.addEventListener("keydown", function(event) {
-        if (event.key === "l" || event.key === "L") {
-            const nav = document.getElementById("sideNav");
-            if (navOpen) {
-                nav.style.right = "-260px";
-                navOpen = false;
-            } else {
-                nav.style.right = "0";
-                navOpen = true;
-            }
-        }
-    });
-</script>
-
 <section id="intro">
     <h2>1. Cos'è Python</h2>
     <p>
@@ -536,6 +519,7 @@ document.getElementById("menuBtn").onclick = () => {
 </script>
 
 </body>
+
 
 
 
