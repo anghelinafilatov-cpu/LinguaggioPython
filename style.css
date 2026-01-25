@@ -106,6 +106,7 @@ code {
     padding-top: 25px;
     z-index: 9999;
     border-left: 4px solid var(--accent);
+   padding-bottom: 40px;
 }
 
 body.menu-open #sideNav {
