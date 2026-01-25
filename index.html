@@ -37,6 +37,8 @@
     <a href="#string-index">s[] – Indici stringhe</a>
     <a href="#backslash">Accapo con \n</a>
     <a href="#upper-lower">upper() e lower()</a>
+    <a href="#format">Il metodo format()</a>
+    <a href="#indice-format">Indice nei placeholder</a>
 </div>
 
 <section id="intro">
@@ -560,6 +562,204 @@ else:<br>
 
 </section>
 
+<section id="format">
+    <h2>16. Il metodo format()</h2>
+    <p>
+        Oggi impariamo un metodo molto importante per scrivere frasi in Python in modo ordinato
+        e professionale: <strong>format()</strong>. È uno strumento che ci permette di inserire
+        valori dentro una frase senza dover fare mille concatenazioni con il simbolo <code>+</code>.
+    </p>
+
+    <h3>16.1 Perché usare format()?</h3>
+    <p>
+        Quando programmiamo, spesso dobbiamo creare frasi che contengono numeri, nomi o risultati.
+        Senza <code>format()</code> dovremmo fare così:
+    </p>
+
+    <code>
+nome = "Anghelina"<br>
+eta = 14<br><br>
+print("Ciao " + nome + ", hai " + str(eta) + " anni.")
+    </code>
+
+    <p>
+        Funziona, ma è scomodo e poco leggibile. Con <strong>format()</strong> diventa molto più semplice.
+    </p>
+
+    <h3>16.2 Come funziona format()</h3>
+    <p>
+        Dentro la stringa mettiamo delle “caselle vuote” chiamate <strong>placeholder</strong>,
+        scritte così: <code>{}</code>. Poi <code>format()</code> inserisce i valori al posto giusto.
+    </p>
+
+    <code>
+nome = "Anghelina"<br>
+eta = 14<br><br>
+print("Ciao {}, hai {} anni.".format(nome, eta))
+    </code>
+
+    <p>
+        Risultato:
+    </p>
+
+    <code>
+Ciao Anghelina, hai 14 anni.
+    </code>
+
+    <h3>16.3 Ordine dei valori</h3>
+    <p>
+        I valori vengono inseriti nell’ordine in cui li metti dentro <code>format()</code>.
+    </p>
+
+    <code>
+print("Oggi è {} e sono le {}.".format("domenica", "15:30"))
+    </code>
+
+    <h3>16.4 Usare i numeri nei placeholder</h3>
+    <p>
+        Possiamo anche indicare quale valore usare in ogni posizione:
+    </p>
+
+    <code>
+print("Il numero {1} è più grande del numero {0}.".format(5, 12))
+    </code>
+
+    <p>
+        Qui <code>{1}</code> prende il secondo valore (12) e <code>{0}</code> il primo (5).
+    </p>
+
+    <h3>16.5 Format con nomi</h3>
+    <p>
+        Possiamo anche dare un nome ai valori, così il codice è ancora più chiaro.
+    </p>
+
+    <code>
+print("Mi chiamo {nome} e ho {anni} anni.".format(nome="Anghelina", anni=14))
+    </code>
+
+    <h3>16.6 Esercizi</h3>
+    <p><strong>Esercizio 1:</strong> chiedi all’utente il suo nome e la sua città, poi stampa una frase usando format().</p>
+
+    <code>
+nome = input("Come ti chiami? ")<br>
+citta = input("Da dove vieni? ")<br><br>
+print("Ciao {}, vieni da {}!".format(nome, citta))
+    </code>
+
+    <p><strong>Esercizio 2:</strong> crea una frase che mostra due numeri e la loro somma usando format().</p>
+
+    <code>
+a = 7<br>
+b = 3<br>
+somma = a + b<br><br>
+print("La somma di {} e {} è {}.".format(a, b, somma))
+    </code>
+
+    <p>
+        Con <strong>format()</strong> possiamo creare frasi chiare, ordinate e professionali,
+        proprio come fanno i programmatori veri.
+    </p>
+</section>
+
+<section id="indice-format">
+    <h2>17. Indice nei placeholder: {segnaposto:posizioni}</h2>
+
+    <p>
+        Quando usiamo il metodo <strong>format()</strong>, possiamo decidere esattamente
+        quale valore inserire in ogni <strong>segnaposto</strong> usando gli indici.
+        Gli indici sono numeri che indicano la posizione dei valori dentro <code>format()</code>.
+    </p>
+
+    <h3>17.1 Come funzionano gli indici</h3>
+    <p>
+        Ogni valore passato a <code>format()</code> ha una posizione:
+    </p>
+
+    <ul>
+        <li><strong>0</strong> → primo valore</li>
+        <li><strong>1</strong> → secondo valore</li>
+        <li><strong>2</strong> → terzo valore</li>
+    </ul>
+
+    <p>
+        Possiamo usare questi numeri dentro le parentesi graffe <code>{ }</code> per decidere
+        quale valore va in ogni punto della frase.
+    </p>
+
+    <code>
+print("Il numero {1} è più grande del numero {0}.".format(5, 12))
+    </code>
+
+    <p>Risultato:</p>
+
+    <code>
+Il numero 12 è più grande del numero 5.
+    </code>
+
+    <h3>17.2 Perché usare gli indici?</h3>
+    <p>
+        Gli indici sono utili quando vogliamo:
+    </p>
+
+    <ul>
+        <li>invertire l’ordine dei valori</li>
+        <li>riutilizzare lo stesso valore più volte</li>
+        <li>rendere la frase più chiara e controllata</li>
+    </ul>
+
+    <h3>17.3 Riutilizzare lo stesso valore</h3>
+    <p>
+        Possiamo usare lo stesso indice più volte nella frase.
+    </p>
+
+    <code>
+print("Il numero {0} ripetuto tre volte: {0}, {0}, {0}".format(7))
+    </code>
+
+    <p>Risultato:</p>
+
+    <code>
+Il numero 7 ripetuto tre volte: 7, 7, 7
+    </code>
+
+    <h3>17.4 Mischiare ordine e ripetizioni</h3>
+    <p>
+        Possiamo anche mischiare valori in ordine diverso.
+    </p>
+
+    <code>
+print("Ordine: {2}, {0}, {1}".format("rosso", "verde", "blu"))
+    </code>
+
+    <p>Risultato:</p>
+
+    <code>
+Ordine: blu, rosso, verde
+    </code>
+
+    <h3>17.5 Esercizi</h3>
+
+    <p><strong>Esercizio 1:</strong> stampa una frase che usa tre colori in ordine diverso.</p>
+
+    <code>
+print("Colori: {1}, {2}, {0}".format("rosso", "verde", "blu"))
+    </code>
+
+    <p><strong>Esercizio 2:</strong> chiedi due numeri all’utente e inverti l’ordine nella frase.</p>
+
+    <code>
+a = input("Primo numero: ")<br>
+b = input("Secondo numero: ")<br><br>
+print("Hai scritto: {1} e {0}".format(a, b))
+    </code>
+
+    <p>
+        Gli indici nei placeholder ci permettono di controllare completamente la struttura
+        delle frasi, rendendo il nostro codice più flessibile e professionale.
+    </p>
+</section>
+
+        
         <script>
 document.getElementById("themeBtn").onclick = () => {
     document.body.classList.toggle("dark");
@@ -571,6 +771,7 @@ document.getElementById("menuBtn").onclick = () => {
 </script>
 
 </body>
+
 
 
 
