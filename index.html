@@ -636,29 +636,6 @@ print("Il numero {1} è più grande del numero {0}.".format(5, 12))
     <code>
 print("Mi chiamo {nome} e ho {anni} anni.".format(nome="Anghelina", anni=14))
     </code>
-
-    <h3>16.6 Esercizi</h3>
-    <p><strong>Esercizio 1:</strong> chiedi all’utente il suo nome e la sua città, poi stampa una frase usando format().</p>
-
-    <code>
-nome = input("Come ti chiami? ")<br>
-citta = input("Da dove vieni? ")<br><br>
-print("Ciao {}, vieni da {}!".format(nome, citta))
-    </code>
-
-    <p><strong>Esercizio 2:</strong> crea una frase che mostra due numeri e la loro somma usando format().</p>
-
-    <code>
-a = 7<br>
-b = 3<br>
-somma = a + b<br><br>
-print("La somma di {} e {} è {}.".format(a, b, somma))
-    </code>
-
-    <p>
-        Con <strong>format()</strong> possiamo creare frasi chiare, ordinate e professionali,
-        proprio come fanno i programmatori veri.
-    </p>
 </section>
 
 <section id="indice-format">
@@ -737,26 +714,78 @@ print("Ordine: {2}, {0}, {1}".format("rosso", "verde", "blu"))
 Ordine: blu, rosso, verde
     </code>
 
-    <h3>17.5 Esercizi</h3>
+<h3>17.6 Aggiungere il tipo nel segnaposto: d, f, s</h3>
+<p>
+    Oltre a scegliere la <strong>posizione</strong> del valore con gli indici, possiamo anche
+    specificare il <strong>tipo di dato</strong> che vogliamo inserire. Questo si fa aggiungendo
+    dopo i due punti <code>:</code> una lettera che indica il formato.
+</p>
 
-    <p><strong>Esercizio 1:</strong> stampa una frase che usa tre colori in ordine diverso.</p>
+<ul>
+    <li><strong>d</strong> → numero intero (digit)</li>
+    <li><strong>f</strong> → numero decimale (float)</li>
+    <li><strong>s</strong> → stringa (string)</li>
+</ul>
 
-    <code>
-print("Colori: {1}, {2}, {0}".format("rosso", "verde", "blu"))
-    </code>
+<p>
+    La sintassi completa diventa quindi:
+</p>
 
-    <p><strong>Esercizio 2:</strong> chiedi due numeri all’utente e inverti l’ordine nella frase.</p>
+<code>
+{indice:tipo}
+</code>
 
-    <code>
-a = input("Primo numero: ")<br>
-b = input("Secondo numero: ")<br><br>
-print("Hai scritto: {1} e {0}".format(a, b))
-    </code>
+<h3>17.7 Esempi pratici</h3>
 
-    <p>
-        Gli indici nei placeholder ci permettono di controllare completamente la struttura
-        delle frasi, rendendo il nostro codice più flessibile e professionale.
-    </p>
+<p><strong>Intero con d:</strong></p>
+<code>
+print("Valore intero: {0:d}".format(25))
+</code>
+
+<p><strong>Decimale con f (2 cifre dopo la virgola):</strong></p>
+<code>
+print("Prezzo: {0:.2f} euro".format(3.5))  # 3.50
+</code>
+
+<p><strong>Stringa con s:</strong></p>
+<code>
+print("Ciao {0:s}!".format("Anghelina"))
+</code>
+
+<h3>17.8 Combinare indice e tipo</h3>
+<p>
+    Possiamo usare insieme indice e tipo per controllare sia la posizione che il formato.
+</p>
+
+<code>
+print("Intero: {0:d}, Decimale: {1:.3f}, Testo: {2:s}".format(7, 3.14159, "robot"))
+</code>
+
+<p>Risultato:</p>
+
+<code>
+Intero: 7, Decimale: 3.142, Testo: robot
+</code>
+
+<h3>17.9 Esercizi</h3>
+
+<p><strong>Esercizio 1:</strong> mostra un numero con 4 decimali usando l’indice 0.</p>
+<code>
+x = 9.876543<br>
+print("Numero formattato: {0:.4f}".format(x))
+</code>
+
+<p><strong>Esercizio 2:</strong> stampa una frase con un intero, un decimale e una stringa usando gli indici e i tipi.</p>
+<code>
+print("Valori: {0:d}, {1:.1f}, {2:s}".format(12, 4.5, "ciao"))
+</code>
+
+<p>
+    Ora i segnaposto <strong>{indice:tipo}</strong> ti permettono di controllare completamente
+    come i valori vengono inseriti e visualizzati, proprio come fanno i programmatori professionisti.
+</p>
+
+
 </section>
 
         
@@ -771,6 +800,7 @@ document.getElementById("menuBtn").onclick = () => {
 </script>
 
 </body>
+
 
 
 
