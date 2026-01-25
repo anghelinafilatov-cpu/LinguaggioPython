@@ -104,9 +104,9 @@ code {
     transition: right 0.3s ease;
     overflow-y: auto;
     padding-top: 25px;
+    padding-bottom: 40px;
     z-index: 9999;
     border-left: 4px solid var(--accent);
-   padding-bottom: 40px;
 }
 
 body.menu-open #sideNav {
