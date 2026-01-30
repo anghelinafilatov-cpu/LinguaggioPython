@@ -39,6 +39,7 @@
     <a href="#upper-lower">upper() e lower()</a>
     <a href="#format">Il metodo format()</a>
     <a href="#indice-format">Indice nei placeholder</a>
+    <a href="#len">La funzione len()</a>
     <a href="#"> </a>
 </div>
 
@@ -769,6 +770,86 @@ Intero: 7, Decimale: 3.142, Testo: robot
 </code>
 </section>
 
+<section id="len">
+    <h2>19. La funzione len()</h2>
+
+    <p>
+        La funzione <strong>len()</strong> è una delle più importanti in Python.
+        Serve per sapere <strong>la lunghezza</strong> di qualcosa: una stringa, una lista,
+        una tupla e molti altri tipi di dati.
+    </p>
+
+    <h3>19.1 len() con le stringhe</h3>
+    <p>
+        Quando usiamo <code>len()</code> su una stringa, Python conta il numero di caratteri,
+        compresi spazi e simboli.
+    </p>
+
+    <code>
+testo = "robotica"<br>
+print(len(testo))  # 8
+    </code>
+
+    <p>
+        Anche gli spazi contano:
+    </p>
+
+    <code>
+frase = "ciao mondo"<br>
+print(len(frase))  # 10
+    </code>
+
+    <h3>19.2 len() con le liste</h3>
+    <p>
+        Con le liste, <code>len()</code> conta quanti elementi ci sono dentro.
+    </p>
+
+    <code>
+numeri = [10, 20, 30, 40]<br>
+print(len(numeri))  # 4
+    </code>
+
+    <h3>19.3 len() con input dell’utente</h3>
+    <p>
+        Possiamo usarlo per sapere quanto è lunga una parola scritta dall’utente.
+    </p>
+
+    <code>
+parola = input("Scrivi una parola: ")<br>
+print("La tua parola ha", len(parola), "caratteri.")
+    </code>
+
+    <h3>19.4 Usare len() dentro format()</h3>
+    <p>
+        Possiamo combinare <code>len()</code> con <code>format()</code> per creare frasi più eleganti.
+    </p>
+
+    <code>
+nome = "Anghelina"<br>
+print("Il nome {} ha {} lettere.".format(nome, len(nome)))
+    </code>
+
+    <h3>19.5 Esercizi</h3>
+
+    <p><strong>Esercizio 1:</strong> chiedi all’utente una frase e stampa quanti caratteri contiene.</p>
+    <code>
+frase = input("Scrivi una frase: ")<br>
+print("La frase contiene", len(frase), "caratteri.")
+    </code>
+
+    <p><strong>Esercizio 2:</strong> crea una lista di 5 numeri e stampa quanti elementi contiene.</p>
+    <code>
+lista = [3, 7, 12, 5, 9]<br>
+print("La lista contiene", len(lista), "elementi.")
+    </code>
+
+    <p>
+        Con <strong>len()</strong> possiamo misurare la lunghezza di quasi tutto in Python.
+        È una funzione semplice ma potentissima, usata in tantissimi programmi reali.
+    </p>
+</section>
+
+
         
         <script>
 document.getElementById("themeBtn").onclick = () => {
@@ -781,6 +862,7 @@ document.getElementById("menuBtn").onclick = () => {
 </script>
 
 </body>
+
 
 
 
